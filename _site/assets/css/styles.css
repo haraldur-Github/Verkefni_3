@@ -1,0 +1,124 @@
+body {
+  font-family: arial;
+  background-color: #ebf4ec;
+  align-items: center;
+  text-align: center; }
+
+.nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+  position: sticky;
+  top: 0;
+  font-weight: bold; }
+
+.nav div {
+  border-radius: 50%;
+  padding: 1em;
+  font-weight: bold;
+  border: 2px outset;
+  background-color: #333; }
+
+.wailcome {
+  padding-top: 1em; }
+
+.valmynd {
+  color: orangered;
+  text-decoration: line-through underline overline;
+  text-decoration-color: black; }
+
+.valmynd-current {
+  color: orangered;
+  text-decoration: none; }
+
+.image-off-white {
+  max-width: 275px; }
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em; }
+
+.images-background {
+  background: white;
+  text-align: center;
+  border: 2px solid grey; }
+
+.images-seperate {
+  height: 150px; }
+
+.collection-text-main {
+  background-color: black;
+  color: orangered;
+  text-align: center;
+  vertical-align: center;
+  padding: 1em;
+  text-shadow: 3px 3px grey; }
+
+.collection-text {
+  background-color: black;
+  color: orangered;
+  text-align: center;
+  vertical-align: center;
+  margin: 0;
+  line-height: 75px;
+  border: 2px dashed grey;
+  text-shadow: 3px 3px grey; }
+
+ul {
+  list-style-type: none; }
+
+@media (min-width: 500px) {
+  .nav {
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  .nav div {
+    margin: 1em 10px 1em 10px; }
+
+  .wailcome {
+    padding-top: 1em; }
+
+  .images {
+    grid-template-columns: 1fr; }
+
+  .images-seperate {
+    height: 200px; } }
+@media (min-width: 700px) {
+  .nav {
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  .nav div {
+    margin: 1em 12px 1em 12px; }
+
+  .image-off-white {
+    max-width: 600px; }
+
+  .images {
+    grid-template-columns: 1fr 1fr; }
+
+  .images-seperate {
+    height: 250px; }
+
+  .collection-text {
+    line-height: 256px; } }
+@media (min-width: 1200px) {
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  .nav div {
+    margin: 1em 1em 1em 1em; }
+
+  .image-off-white {
+    max-width: none; }
+
+  .images {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1200px;
+    margin: auto; }
+
+  .images-seperate {
+    height: 300px; }
+
+  .collection-text {
+    line-height: 306px; } }

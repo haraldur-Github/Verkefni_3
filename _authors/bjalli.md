@@ -1,5 +1,6 @@
 ---
 short_name: bjalli
 name: Bjalli Bjallason
-position: maður tekur ekki eftir honum
+position: charity case
 ---
+Hann er hérna bara fyrir launaseðilinn, alveg frábær starfsmaður!
