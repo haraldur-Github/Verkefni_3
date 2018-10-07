@@ -1,5 +1,5 @@
 <nav class="nav">
 	  {% for item in site.data.navigation %}
-	    <div><a {% if page.url == item.link %} class="valmynd-current" {% endif %} class="valmynd" href={{ item.link }}> {% if page.url == item.link %} {{ item.name }} {% else %} &quot{{ item.name }}&quot {% endif %}</a></div>
+	    <div><a {% if page.url == item.link %} class="valmynd-current" {% endif %} class="valmynd" href={{ item.link | relative_url}}> {% if page.url == item.link %} {{ item.name }} {% else %} &quot{{ item.name }}&quot {% endif %}</a></div>
 	  {% endfor %}
 </nav>
