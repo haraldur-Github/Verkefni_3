@@ -1,5 +1,17 @@
 <nav class="nav">
-	  {% for item in site.data.navigation %}
-	    <div><a {% if page.url == item.link %} class="valmynd-current" {% endif %} class="valmynd" href="{{ item.link | relative_url }}"> {% if page.url == item.link %} {{ item.name }} {% else %} &quot{{ item.name }}&quot {% endif %}</a></div>
-	  {% endfor %}
+	<section class="nav-columns">
+		<a class="sitelogo" target="_blank" href="https://www.off---white.com/">
+			<img src={{ "assets/photos/offwhitelogo-sitelogo.svg" | relative_url }}>
+		</a>
+		{% for item in site.data.navigation %}
+			<div><a {% if page.url == item.link %} class="valmynd-current" {% endif %} class="valmynd" href="{{ item.link | relative_url }}"> {% if page.url == item.link %} {{ item.name }} {% else %} &quot{{ item.name }}&quot {% endif %}</a></div>
+		{% endfor %}
+	</section>
+	<section class="blood-dripping">
+	  	<img class="blood-dripping-photo" src={{ "assets/photos/blood-dripping.svg" | relative_url }}>
+		<img class="blood-dripping-photo" src={{ "assets/photos/blood-dripping.svg" | relative_url }}>
+	  	<img class="blood-dripping-photo" src={{ "assets/photos/blood-dripping.svg" | relative_url }}>
+		<img class="blood-dripping-photo" src={{ "assets/photos/blood-dripping.svg" | relative_url }}>
+		<img class="blood-dripping-photo" src={{ "assets/photos/blood-dripping.svg" | relative_url }}>
+	</section>
 </nav>
