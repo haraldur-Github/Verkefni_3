@@ -25,171 +25,127 @@
 }
 
 .icon-home:before {
+
   content: "\e900";
 }
 .icon-newspaper:before {
+
   content: "\e904";
 }
 .icon-users:before {
+
   content: "\e972";
 }
 .icon-info:before {
+
   content: "\ea0c";
 }
 
 body {
-	font-family: arial;
-	background-image: url("assets/photos/bloodRain.png");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
 
-	animation: rain .2s linear infinite;
+	font-family: arial;
+	background-color: #ebf4ec;
+	background-image: url(../photos/backdrop1.png);
 
 	align-items: center;
 	text-align: center;
 
 	margin: 0;
-}
 
-@keyframes rain
-{
-	0%
-	{
-		background-position: 0% 0%;
-	}
-	100%
-	{
-		background-position: 20% 100%;
-	}
+	padding-bottom: 4em;
 }
 
 .nav {
-    position: sticky;
-    top: 0;
-
-    z-index: 2;
-
-    text-align: center;
-    font-weight: bold;
-}
-
-.nav-columns {
-	display:grid;
-	grid-template-columns: 1fr;
-}
-
-.nav-columns div {
-	height: 50px;
-	width: 200px;
-
-	border-radius: 50%;
-
-	font-weight: bold;
-
-	border: 2px outset;
-	background-color: black;
+	display: none;
 }
 
 .sitelogo {
-	width: 100px;
+	width: 75px;
 	margin: auto;
 }
 
-.blood-dripping {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-
-	z-index: -1;
-
-	position: absolute;
-	top: 0;
+/* Mini nav bar*/
+input {
+	display: none;
 }
-
-.blood-dripping-photo{
-	width: 100%;
+ul {
+	border: 2px solid grey;
 }
-
-.wailcome {
-	padding-top: 1em;
+.menuLabel {
+	position: fixed;
+    bottom: 0;
+    left: 0;
+    border: 2px outset;
+    border-width: 1px 0;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 0.6em 0;
+    background-color: #ebf4ec;
+    transition: all .4s ease;
+    z-index: 999;
 }
-
-.wailcome-photos {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+input:checked + .menuLabel {
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+	color: black;
 }
-
-.image-off-white {
-	max-height: 150px;
+.nav-mini {
+    display: block;
+    position: fixed;
+    bottom: -10em;
+    width: 100%;
+    z-index: 980;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: all .5s ease;
 }
-
-.pumpkin{
-	height: 100px;
-	margin: auto;
+input:checked ~ nav {
+	max-height: 500px;
+	bottom: 2.9em;
 }
-
-.valmynd {
-	line-height: 50px;
-	vertical-align: center;
-
+ul {
+	list-style: none;
+	padding: 0;
+}
+li {
+	border-bottom: 1px solid grey;
+	background-color: #ebf4ec;
+}
+li:last-child {
+	border-bottom: 0;
+}
+a {
 	color: orangered;
-	text-decoration: underline overline double white;
-}
-
-.valmynd-current {
-	line-height: 50px;
-	vertical-align: center;
-
-	color: orangered;
+	display: block;
+	padding: 6px 12px;
 	text-decoration: none;
 }
-
-.images {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-gap: 1em;
+a:hover {
+	color: #ff7b29;
 }
 
-.images-background{
-	background: url(../photos/photos-background.svg);
-	opacity: 0.8;
-	text-align: center;
-	border: 2px solid grey;
-
-	overflow: hidden;
-}
-
-.images-seperate {
-	height: 150px;
-}
-
-.images-seperate:hover {
-    animation-name: imageRotation;
-    animation-duration: 2s;
-    animation-iteration-count: 4;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes imageRotation {
-	from{transform: rotate(20deg);}
-	to{transform: rotate(-20deg);}
+.wailcome-txt {
+	font-size: 32px;
+	font-weight: bold;
+	font-style: italic;
 }
 
 .collection-text-main{
 	background-color: black;
 	color: orangered;
 
+	font-size: 32px;
 	text-align: center;
 	vertical-align: center;
-
-	padding: 2em;
 
 	text-shadow: 3px 3px grey;
 }
 
 .flip-box {
-	height: 150px;
+	height: 100px;
 	width: 100%;
 }
 
@@ -202,12 +158,7 @@ body {
 .flip-box .flip-box-inner{
 	transform-style: preserve-3d;
  	
-	animation-name: flipBox;
-    animation-duration: 5s;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
+	animation: flipBox 4s infinite 2s alternate ease-in-out;
 }
 
 .flip-box-front, .flip-box-back {
@@ -218,7 +169,7 @@ body {
 }
 
 .flip-box-back {
-  transform: rotateX(180deg);
+	transform: rotateX(180deg);
 }
 
 @keyframes flipBox{
@@ -227,56 +178,95 @@ body {
 	}
 }
 
-.collection-text{
-	background-color: black;
-	color: orangered;
+.wailcome-virgil {
+	display: grid;
+	grid-template-columns: 1fr;
 
-	text-align: center;
-	vertical-align: center;
-	margin: 0;
-	line-height: 75px;
+	grid-row-gap: 5px;
 
-	border: 2px dashed grey;
-
-	text-shadow: 3px 3px grey;
+	padding: 0 2em;
 }
 
 .virgil {
-	height: 350px;
+	height: 300px;
+	margin: auto;
+}
+
+.virgil-ikea {
+	height: 200px;
+	margin: auto;
+}
+
+.images {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1em;
+}
+
+.images-background{
+	background: url(../photos/photos-background.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	text-align: center;
+	border: 2px solid grey;
+
+	overflow: hidden;
+}
+
+.images-seperate {
+	height: 150px;
+}
+
+.images-seperate:hover {
+	animation: imageRotation 2s infinite alternate cubic-bezier(0.38, 0.76, 0.72,-0.02);
+}
+
+@keyframes imageRotation {
+	from{transform: rotate(25deg);}
+	to{transform: rotate(-20deg);}
+}
+
+.collection-background{
+	background-color: black;
+
+	border: 2px dashed grey;
+}
+
+.collection-text {
+	overflow: hidden;
+	white-space: nowrap;
+
+	color: orangered; 
+	text-shadow: 3px 3px grey;
+
+	text-align: center;
+	vertical-align: center;
+	margin: 0 auto;
+	line-height: 75px;
+
+	animation: typing 5s steps(60, end) infinite alternate,
+	colorChange 10s infinite ease-in-out;
+}
+
+@keyframes typing {
+	from{ width: 0; }
+	to{ width: 100%; }
+}
+@keyframes colorChange {
+	0%{ color: orangered; 
+		text-shadow: 3px 3px white;
+	}
+	100%{ color: white; 
+		text-shadow: 3px 3px orangered;
+	}
 }
 
 ul {
 	list-style-type: none;
 }
 
-@media (min-width: 500px){
-	.nav-columns {
-		grid-template-columns: repeat(4, 1fr);
-	}
-
-	.nav-columns div {
-		height: 75px;
-		width: 125px;
-		margin: auto;
-	}
-
-	.sitelogo {
-		grid-column-start: 1;
-		grid-column-end: 5;
-	}
-
-	.valmynd{
-		line-height: 75px;
-	}
-
-	.valmynd-current{
-		line-height: 75px;
-	}
-
-	.image-off-white{
-		max-height: 250px;
-	}
-
+@media (min-width: 550px){
 	.wailcome {
 		padding-top: 0;
 	}
@@ -290,25 +280,58 @@ ul {
 	}
 }
 
-@media (min-width: 700px){
+@media (min-width: 650px){
+	.nav {
+		display: block;
+	    font-weight: bold;
+
+	    background-color: #ebf4ec;
+
+	    border: 15px dotted transparent;
+	    border-image: url(../photos/nav-background.svg) 5 stretch;
+	    border-width: 15px 0 15px 0;
+	}
+
 	.nav-columns {
-		grid-gap: 5px;
-		grid-template-columns: repeat(4, 1fr);
+		display:grid;
+		grid-template-columns: repeat(5, 1fr);
 	}
 
 	.nav-columns div {
+		height: 75px;
+		width: 135px;
 		margin: auto;
-		width: 165px;
 	}
 
-	.pumpkin{
-		height: 150px;
-	}
-	
-	.image-off-white{
-		max-height: 350px;
+	.valmynd {
+		line-height: 75px;
+		vertical-align: center;
+
+		color: orangered;
+		text-decoration: line-through;
 	}
 
+	.valmynd-current {
+		line-height: 75px;
+		vertical-align: center;
+
+		color: orangered;
+		text-decoration: none;
+	}
+
+	.mini-nav {
+		display: none;
+	}
+
+	.virgil {
+		height: 325px;
+		margin: auto;
+	}
+
+	.virgil-ikea {
+		height: 225px;
+		margin: auto;
+	}
 	.images {
 		grid-template-columns: 1fr 1fr;
 	}
@@ -322,26 +345,26 @@ ul {
 }
 
 @media (min-width: 1000px){
-	.nav-columns {
-		grid-gap: 5px;
-		grid-template-columns: repeat(5, 1fr);
-	}
-
 	.nav-columns div {
-		margin: auto;
 		width: 200px;
 	}
 
 	.sitelogo {
-		grid-column-end: 2;
+		width: 150px;
 	}
 
-	.pumpkin{
-		height: 150px;
+	.wailcome-virgil {
+		grid-template-columns: repeat(3, 1fr);
 	}
-	
-	.image-off-white{
-		max-height: 350px;
+
+	.virgil {
+		height: 325px;
+		margin: auto;
+	}
+
+	.virgil-ikea {
+		height: 225px;
+		margin: auto;
 	}
 
 	.images {
@@ -357,16 +380,14 @@ ul {
 }
 
 @media (min-width: 1200px){
-	.nav-columns div {
+	.virgil {
+		height: 375px;
 		margin: auto;
 	}
 
-	.image-off-white{
-		max-height: 450px;
-	}
-	
-	.pumpkin {
-		height: 175px;
+	.virgil-ikea {
+		height: 275px;
+		margin: auto;
 	}
 
 	.images {
@@ -374,7 +395,8 @@ ul {
 		grid-template-rows: 350px;
 		grid-gap: 1em;
 
-		max-width: 1200px;
+		max-width: 1050px;
+
 		margin: auto;
 	}
 
@@ -385,5 +407,4 @@ ul {
 	.collection-text{
 		line-height: 350px;
 	}
-
 }
