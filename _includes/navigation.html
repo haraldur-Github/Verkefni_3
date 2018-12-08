@@ -1,23 +1,12 @@
-<nav class="nav">
-	<section class="nav-columns">
-		<a class="sitelogo" target="_blank" href="https://www.off---white.com/">
-			<img src={{ "assets/photos/OffWhiteLogo.svg" | relative_url }}>
-		</a>
-		{% for item in site.data.navigation %}
-			<div><mark><a {% if page.url == item.link %} class="valmynd-current" {% endif %} class="valmynd" href="{{ item.link | relative_url }}"> {% if page.url == item.link %} {{ item.name }} {% else %} &quot{{ item.name }}&quot {% endif %}</a></mark></div>
-		{% endfor %}
-	</section>
-</nav>
-
-<section class="mini-nav">
-	<input type="checkbox" id="toggle">
+<section>
+	<input class="menuInput" type="checkbox" id="toggle">
 	<label for="toggle" class="menuLabel"><span class="icon icon-menu4"> </span></label>
-	<nav class="nav-mini">
-	  <ul>
-	    <li><a href="{{ / | relative_url }}"><span class="icon icon-home"></span>Home<span class="icon icon-home"></span></a></li>
-	    <li><a href="{{ /about.html | relative_url}}"><span class="icon icon-info"></span>About<span class="icon icon-info"></span></a></li>
-	    <li><a href="{{ /blog.html | relative_url }}"><span class="icon icon-newspaper">Blog<span class="icon icon-newspaper"></a></li>
-	    <li><a href="{{ /staff.html | relative_url }}"><span class="icon icon-users"></span>Staff<span class="icon icon-users"></span></a></li>
-	  </ul>
+	<nav class="nav-columns">
+		<ul>
+			<li><a class="sitelogo" target="_blank" href="https://www.off---white.com/"><img src={{ "assets/photos/OffWhiteLogo.svg" | relative_url }}></a></li>
+			{% for item in site.data.navigation %}
+				<li><a {% if page.url == item.link %} class="valmynd-current" {% endif %} class="valmynd" href="{{ item.link | relative_url }}"> {% if page.url == item.link %} {{ item.name }} {% else %} &quot{{ item.name }}&quot {% endif %}</a></li>
+			{% endfor %}
+		</ul>
 	</nav>
 </section>

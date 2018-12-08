@@ -6,3 +6,5 @@
   link: /blog.html
 - name: <span class="icon icon-users"></span> Staff <span class="icon icon-users"></span>
   link: /staff.html
+- name: <span class="icon icon-cart"></span>
+  link: /cart.html
